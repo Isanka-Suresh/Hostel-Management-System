@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginFormController">
+   <children>
+      <BorderPane layoutX="50.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox alignment="CENTER" prefHeight="329.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="186.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/hotel.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="D24 Hostel">
+                     <font>
+                        <Font name="Nirmala UI" size="48.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <VBox alignment="CENTER" prefHeight="37.0" prefWidth="500.0" style="-fx-background-color: #52b69a;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Created by Isanka Suresh" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </bottom>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="422.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="100.0" text="Name">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font></Label>
+                        <TextField fx:id="txtName" prefHeight="35.0" prefWidth="275.0" promptText="Type Your Name" style="-fx-background-radius: 36;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="422.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="100.0" text="Password">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="20.0" />
+                           </HBox.margin></Label>
+                        <VBox>
+                           <children>
+                              <PasswordField fx:id="txtPasword" prefHeight="35.0" prefWidth="275.0" promptText="Type Your Password" style="-fx-background-radius: 36;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                              <Label fx:id="lblIncorrect" prefHeight="21.0" prefWidth="207.0" text="Password is Incorrect" textFill="RED">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="103.0" prefWidth="473.0">
+                     <children>
+                        <JFXCheckBox fx:id="chkbox" onAction="#chkboxOnAction" prefHeight="20.0" prefWidth="225.0" text="Show Password">
+                           <VBox.margin>
+                              <Insets left="30.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <JFXButton fx:id="btnLogin" buttonType="RAISED" onAction="#btnLoginOnAction" prefHeight="36.0" prefWidth="163.0" style="-fx-background-color: #52b69a; -fx-background-radius: 36;" text="Login">
+                           <VBox.margin>
+                              <Insets right="70.0" top="35.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+         <left>
+            <VBox prefHeight="334.0" prefWidth="78.0" BorderPane.alignment="CENTER" />
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
