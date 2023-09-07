@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StudentFormController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="67.0" prefWidth="377.0" style="-fx-background-color: #52b69a;" text="Student Management">
+                     <font>
+                        <Font name="Nirmala UI" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+                  <VBox alignment="CENTER" prefHeight="252.0" prefWidth="685.0">
+                     <children>
+                        <VBox prefHeight="142.0" prefWidth="1695.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="412.0">
+                                 <children>
+                                    <Label prefHeight="21.0" prefWidth="84.0" text="Student ID" />
+                                    <TextField fx:id="txtStudentId" prefHeight="30.0" prefWidth="100.0" />
+                                    <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="597.0">
+                                       <children>
+                                          <Label prefHeight="21.0" prefWidth="59.0" text="Name" />
+                                          <TextField fx:id="txtStudentName" prefHeight="31.0" prefWidth="500.0" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="25.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="568.0">
+                                       <children>
+                                          <Label prefHeight="21.0" prefWidth="84.0" text="Address" />
+                                          <TextField fx:id="txtAddress" prefHeight="30.0" prefWidth="500.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="412.0">
+                                 <children>
+                                    <Label prefHeight="21.0" prefWidth="84.0" text="Contact" />
+                                    <TextField fx:id="txtContact" prefHeight="30.0" prefWidth="220.0" />
+                                    <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="412.0">
+                                       <children>
+                                          <Label prefHeight="21.0" prefWidth="84.0" text="Birthday" />
+                                          <DatePicker fx:id="dpBirthday" onAction="#dpBirthday" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="25.0" />
+                                       </HBox.margin>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="412.0">
+                                 <children>
+                                    <Label prefHeight="21.0" prefWidth="84.0" text="Gender" />
+                                    <CheckBox fx:id="cpMale" mnemonicParsing="false" onAction="#cpMaleOnAction" text="Male" />
+                                    <CheckBox fx:id="cpFemale" mnemonicParsing="false" onAction="#cpFemaleOnAction" text="Female">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                 <children>
+                                    <JFXButton fx:id="btnAdNew" onAction="#btnAdNewOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #52b69a;" text="Add New" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                 <children>
+                                    <JFXButton fx:id="btnSearch" onAction="#btnSearchOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #52b69a;" text="Search" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                 <children>
+                                    <JFXButton fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #52b69a;" text="Update" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                 <children>
+                                    <JFXButton fx:id="btnDelete" onAction="#btnDeleteOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #e63946;" text="Delete" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="431.0" prefWidth="855.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox VBox.vgrow="ALWAYS">
+                           <children>
+                              <TableView fx:id="tblStudent" prefHeight="427.0" prefWidth="855.0" HBox.hgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn prefWidth="84.0" text="Student ID" />
+                                  <TableColumn prefWidth="567.3333129882812" text="Name" />
+                                    <TableColumn prefWidth="412.66668701171875" text="Address" />
+                                    <TableColumn prefWidth="278.3333740234375" text="Contact" />
+                                    <TableColumn prefWidth="223.6666259765625" text="Birthday" />
+                                    <TableColumn prefWidth="138.0" text="Gender" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
