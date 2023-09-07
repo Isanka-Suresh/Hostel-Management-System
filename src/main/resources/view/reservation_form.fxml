@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ReservationFormController">
+    <children>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label prefHeight="60.0" prefWidth="450.0" style="-fx-background-color: #52b69a;" text="Reservation Management">
+                            <font>
+                                <Font name="Nirmala UI" size="36.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <padding>
+                                <Insets left="5.0" />
+                            </padding>
+                        </Label>
+                        <VBox alignment="CENTER" prefHeight="121.0" prefWidth="1645.0">
+                            <children>
+                                <HBox prefHeight="254.0" prefWidth="685.0">
+                                    <children>
+                                        <VBox prefHeight="254.0" prefWidth="1638.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="412.0">
+                                                    <children>
+                                                        <Label prefHeight="21.0" prefWidth="85.0" text="Reserve ID" />
+                                                        <TextField fx:id="txtReserveId" prefHeight="31.0" prefWidth="185.0" />
+                                                      <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="470.0">
+                                                          <children>
+                                                              <Label prefHeight="21.0" prefWidth="75.0" text="Student" />
+                                                <ComboBox fx:id="cmbStudent" onAction="#cmbStudentOnAction" prefHeight="31.0" prefWidth="370.0" />
+                                                          </children>
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="323.0">
+                                                          <children>
+                                                              <Label prefHeight="21.0" prefWidth="50.0" text="Room" />
+                                                <ComboBox fx:id="cmbRoom" onAction="#cmbRoomOnAction" prefHeight="31.0" prefWidth="251.0" />
+                                                          </children>
+                                             <HBox.margin>
+                                                <Insets left="25.0" />
+                                             </HBox.margin>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="305.0">
+                                                          <children>
+                                                              <Label prefHeight="21.0" prefWidth="45.0" text="Date" />
+                                                              <DatePicker fx:id="dpDate" />
+                                                          </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="280.0">
+                                                          <children>
+                                                              <Label prefHeight="21.0" prefWidth="84.0" text="Key Money" />
+                                                              <CheckBox fx:id="cbPaid" mnemonicParsing="false" onAction="#cbPaidOnAction" text="Paid" />
+                                                              <CheckBox fx:id="cbUnpaid" mnemonicParsing="false" onAction="#cbUnpaidOnAction" text="Unpaid">
+                                                                  <HBox.margin>
+                                                                      <Insets left="5.0" />
+                                                                  </HBox.margin>
+                                                              </CheckBox>
+                                                          </children>
+                                                      </HBox>
+                                                    </children>
+                                                </HBox>
+                                    <HBox>
+                                       <children>
+                                                      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                                          <children>
+                                                              <JFXButton fx:id="btnAdd" onAction="#btnAddOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #52b69a;" text="Add New" />
+                                                          </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                                          <children>
+                                                              <JFXButton fx:id="btnSearch" onAction="#btnSearchOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #52b69a;" text="Search" />
+                                                          </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                                          <children>
+                                                              <JFXButton fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #52b69a;" text="Update" />
+                                                          </children>
+                                                      </HBox>
+                                                      <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                                          <children>
+                                                              <JFXButton fx:id="btnDelete" onAction="#btnDeleteOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #e63946;" text="Delete" />
+                                                          </children>
+                                                      </HBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="11.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets left="5.0" />
+                                    </padding>
+                                </HBox>
+                            </children>
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                        </VBox>
+                        <VBox prefHeight="799.0" prefWidth="1645.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <HBox VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <TableView fx:id="tblReservation" prefHeight="800.0" prefWidth="1645.0" HBox.hgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn prefWidth="128.00000762939453" text="Reserve ID" />
+                                                <TableColumn prefWidth="745.9999923706055" text="Student" />
+                                                <TableColumn prefWidth="322.6666564941406" text="Room" />
+                                                <TableColumn prefWidth="333.3333740234375" text="Date" />
+                                                <TableColumn prefWidth="163.6666259765625" text="Status" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
