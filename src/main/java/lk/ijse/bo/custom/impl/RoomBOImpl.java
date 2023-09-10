@@ -17,23 +17,64 @@ public class RoomBOImpl implements RoomBO {
         List<RoomDTO> roomDTOList= new ArrayList<>();
         List<Room>rooms=roomDAO.getAll();
         for (Room room : rooms){
-            roomDTOList.add(new RoomDTO(room.getRoomTypeId(),room.getRoomType(),room.getKeyMoney(),room.getQuantity()));
+            roomDTOList.add(
+                    new RoomDTO(
+                            room.getRoomTypeId(),
+                            room.getRoomType(),
+                            room.getKeyMoney(),
+                            room.getQuantity()
+                    ));
         }
         return roomDTOList;
     }
 
     @Override
     public boolean addRoom(RoomDTO room) throws Exception {
-        return roomDAO.add(new Room(room.getRoomTypeId(),room.getRoomType(),room.getKeyMoney(),room.getQuantity()));
+        return roomDAO.add(
+                new Room(
+                        room.getRoomTypeId(),
+                        room.getRoomType(),
+                        room.getKeyMoney(),
+                        room.getQuantity(),
+                        new ArrayList<>()
+                ));
     }
 
     @Override
     public boolean updateRoom(RoomDTO room) throws Exception {
-        return roomDAO.update(new Room(room.getRoomTypeId(),room.getRoomType(),room.getKeyMoney(),room.getQuantity()));
+        return roomDAO.update(
+                new Room(
+                        room.getRoomTypeId(),
+                        room.getRoomType(),
+                        room.getKeyMoney(),
+                        room.getQuantity(),
+                        new ArrayList<>()
+                ));
     }
 
     @Override
     public boolean deleteRoom(String id) throws Exception {
         return roomDAO.delete(id);
+    }
+
+    @Override
+    public String newId() throws Exception {
+        return roomDAO.newId();
+    }
+
+    @Override
+    public int getTotalRoomQty(String id) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public RoomDTO getRoom(String value) throws Exception {
+        Room room = roomDAO.search(value);
+        return new RoomDTO(
+                room.getRoomTypeId(),
+                room.getRoomType(),
+                room.getKeyMoney(),
+                room.getQuantity()
+        );
     }
 }

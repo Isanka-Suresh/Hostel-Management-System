@@ -17,26 +17,67 @@ public class StudentBOImpl implements StudentBO {
         List<StudentDTO> studentDTOList= new ArrayList<>();
         List<Student> students= studentDAO.getAll();
         for (Student student:students){
-            studentDTOList.add(new StudentDTO(student.getStudentId(),student.getName(),
-                    student.getAddress(),student.getContact(),student.getDob(),student.isMale()));
+            studentDTOList.add(
+                    new StudentDTO(
+                            student.getStudentId(),
+                            student.getName(),
+                            student.getAddress(),
+                            student.getContact(),
+                            student.getDob(),
+                            student.isMale()
+                    ));
         }
         return studentDTOList;
     }
 
     @Override
     public boolean addStudent(StudentDTO student) throws Exception {
-        return studentDAO.add(new Student(student.getStudentId(),student.getName(),
-                student.getAddress(),student.getContact(),student.getDob(),student.isMale()));
+        return studentDAO.add(
+                new Student(
+                        student.getStudentId(),
+                        student.getName(),
+                        student.getAddress(),
+                        student.getContact(),
+                        student.getDob(),
+                        student.isMale(),
+                        new ArrayList<>()
+                ));
     }
 
     @Override
     public boolean updateStudent(StudentDTO student) throws Exception {
-        return studentDAO.update(new Student(student.getStudentId(),student.getName(),student.getAddress(),student.getContact(),
-                student.getDob(),student.isMale()));
+        return studentDAO.update(
+                new Student(
+                        student.getStudentId(),
+                        student.getName(),
+                        student.getAddress(),
+                        student.getContact(),
+                        student.getDob(),
+                        student.isMale(),
+                        new ArrayList<>()
+                ));
     }
 
     @Override
     public boolean deleteStudent(String id) throws Exception {
         return studentDAO.delete(id);
+    }
+
+    @Override
+    public String newId() throws Exception {
+        return studentDAO.newId();
+    }
+
+    @Override
+    public StudentDTO getStudent(String id) throws Exception {
+        Student std=studentDAO.search(id);
+        return new StudentDTO(
+                std.getStudentId(),
+                std.getName(),
+                std.getAddress(),
+                std.getContact(),
+                std.getDob(),
+                std.isMale()
+        );
     }
 }

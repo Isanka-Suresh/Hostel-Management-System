@@ -17,7 +17,7 @@
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
-                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                <VBox focusTraversable="true" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                     <children>
                         <Label prefHeight="58.0" prefWidth="374.0" style="-fx-background-color: #52b69a;" text="Room Management">
                             <font>
@@ -39,7 +39,7 @@
                                                 <HBox alignment="CENTER_LEFT" prefHeight="88.0" prefWidth="1695.0">
                                                     <children>
                                                         <Label prefHeight="21.0" prefWidth="75.0" text="Room ID" />
-                                                        <TextField fx:id="txtRoomId" prefHeight="30.0" prefWidth="100.0" />
+                                                        <TextField fx:id="txtRoomId" prefHeight="30.0" prefWidth="100.0" text="R" />
                                                       <HBox alignment="CENTER_LEFT" prefHeight="88.0" prefWidth="329.0">
                                                           <children>
                                                               <Label prefHeight="21.0" prefWidth="41.0" text="Type" />
@@ -80,6 +80,11 @@
                                                               <JFXButton fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #52b69a;" text="Update" />
                                                           </children>
                                                       </HBox>
+                                          <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                             <children>
+                                                <JFXButton fx:id="btnSave" disable="true" onAction="#btnSaveOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #008cff;" text="Save" />
+                                             </children>
+                                          </HBox>
                                                       <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
                                                           <children>
                                                               <JFXButton fx:id="btnDelete" onAction="#btnDeleteOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #e63946;" text="Delete" />
@@ -103,12 +108,14 @@
                             <children>
                                 <HBox VBox.vgrow="ALWAYS">
                                     <children>
-                                        <TableView fx:id="tblRoom" prefHeight="427.0" prefWidth="855.0" HBox.hgrow="ALWAYS">
+                                        <TableView fx:id="tblRoom" onMouseClicked="#tblRoomOnAction" prefHeight="427.0" prefWidth="855.0" HBox.hgrow="ALWAYS">
                                             <columns>
-                                                <TableColumn prefWidth="214.6666717529297" text="Room ID" />
-                                                <TableColumn prefWidth="835.3333740234375" text="Type" />
-                                                <TableColumn prefWidth="443.6666259765625" text="Key Money" />
-                                                <TableColumn prefWidth="209.33331298828125" text="Quantity" />
+                                                <TableColumn fx:id="tblRoomId" prefWidth="214.6666717529297" text="Room ID" />
+                                                <TableColumn fx:id="tblRoomType" prefWidth="361.33331298828125" text="Type" />
+                                                <TableColumn fx:id="tblKeyMoney" prefWidth="390.6666259765625" text="Key Money" />
+                                                <TableColumn fx:id="tblQuantity" minWidth="0.0" prefWidth="169.3333740234375" text="Quantity" />
+                                    <TableColumn fx:id="tblAvailableRooms" minWidth="0.0" prefWidth="272.0" text="Available Room Count" />
+                                    <TableColumn fx:id="tblReservedRooms" minWidth="0.0" prefWidth="290.0" text="Reserved Room Count" />
                                             </columns>
                                         </TableView>
                                     </children>

@@ -11,6 +11,8 @@ public interface UserBO extends SuperBO {
     public boolean addUser(UserDTO user) throws Exception;
     public boolean updateUser(UserDTO user) throws Exception;
     public boolean deleteUser(String id) throws Exception;
-    public boolean searchUser(UserDTO user) throws Exception;
+    public boolean exist(String userName)throws Exception;
+    public UserDTO search(String id) throws Exception;
+    public boolean checkUser(String userName,String password)throws Exception;
 
 }

@@ -15,25 +15,27 @@ public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;
     private SessionFactory sessionFactory;
 
-    private FactoryConfiguration() {
-        Configuration configuration=new Configuration();
-        Properties properties=new Properties();
+    private FactoryConfiguration(){
+        Configuration configuration = new Configuration();
+        Properties properties = new Properties();
+
         try {
             properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("hibernate.properties"));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
         configuration.setProperties(properties);
         configuration
+                .addAnnotatedClass(User.class)
                 .addAnnotatedClass(Student.class)
-                .addAnnotatedClass(Room.class)
                 .addAnnotatedClass(Reservation.class)
-                .addAnnotatedClass(User.class);
-        sessionFactory=configuration.buildSessionFactory();
+                .addAnnotatedClass(Room.class);
+        sessionFactory = configuration.buildSessionFactory();
     }
 
     public static FactoryConfiguration getInstance(){
-        return factoryConfiguration==null? factoryConfiguration=new FactoryConfiguration():factoryConfiguration;
+        return factoryConfiguration == null ? (factoryConfiguration = new FactoryConfiguration()) : factoryConfiguration;
     }
 
     public Session getSession(){

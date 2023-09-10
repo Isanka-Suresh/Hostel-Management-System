@@ -1,8 +1,16 @@
 package lk.ijse.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+@Data
+@AllArgsConstructor
 @Entity
 public class Room {
     @Id
@@ -10,46 +18,10 @@ public class Room {
     private String roomType;
     private double keyMoney;
     private int quantity;
+    @OneToMany(mappedBy = "room", fetch = FetchType.EAGER,targetEntity= Reservation.class)
+        private List<Reservation> reservations;
 
     public Room() {
     }
 
-    public Room(String roomTypeId, String roomType, double keyMoney, int quantity) {
-        this.roomTypeId = roomTypeId;
-        this.roomType = roomType;
-        this.keyMoney = keyMoney;
-        this.quantity = quantity;
-    }
-
-    public String getRoomTypeId() {
-        return roomTypeId;
-    }
-
-    public void setRoomTypeId(String roomTypeId) {
-        this.roomTypeId = roomTypeId;
-    }
-
-    public String getRoomType() {
-        return roomType;
-    }
-
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
-    }
-
-    public double getKeyMoney() {
-        return keyMoney;
-    }
-
-    public void setKeyMoney(double keyMoney) {
-        this.keyMoney = keyMoney;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 }

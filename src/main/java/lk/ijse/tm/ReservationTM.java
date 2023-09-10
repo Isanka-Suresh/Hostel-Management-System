@@ -11,5 +11,5 @@ public class ReservationTM {
     private String studentId;
     private String roomId;
     private LocalDate date;
-    private boolean status;
+    private String status;
 }

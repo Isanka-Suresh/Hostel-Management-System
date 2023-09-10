@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -77,11 +78,20 @@
                            </HBox.margin></Label>
                         <VBox>
                            <children>
-                              <PasswordField fx:id="txtPasword" prefHeight="35.0" prefWidth="275.0" promptText="Type Your Password" style="-fx-background-radius: 36;">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </PasswordField>
+                              <Pane>
+                                 <children>
+                                    <TextField fx:id="txtShowPass" prefHeight="35.0" prefWidth="275.0" promptText="Type Your Name" style="-fx-background-radius: 36;">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <PasswordField fx:id="txtPasword" prefHeight="35.0" prefWidth="275.0" promptText="Type Your Password" style="-fx-background-radius: 36;">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </PasswordField>
+                                 </children>
+                              </Pane>
                               <Label fx:id="lblIncorrect" prefHeight="21.0" prefWidth="207.0" text="Password is Incorrect" textFill="RED">
                                  <font>
                                     <Font name="Arial" size="12.0" />
@@ -108,6 +118,18 @@
                         </JFXButton>
                      </children>
                   </VBox>
+                  <Label contentDisplay="RIGHT" prefHeight="21.0" prefWidth="426.0" text="No Account. You can always sign up From" textAlignment="CENTER">
+                     <graphic>
+                        <JFXButton fx:id="btnHere" onAction="#btnHereOnAction" text="here." textFill="#120fe4">
+                           <padding>
+                              <Insets right="6.0" />
+                           </padding>
+                        </JFXButton>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </Label>
                </children>
             </VBox>
          </center>

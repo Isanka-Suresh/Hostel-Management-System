@@ -96,6 +96,11 @@
                                                               <JFXButton fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #52b69a;" text="Update" />
                                                           </children>
                                                       </HBox>
+                                          <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
+                                             <children>
+                                                <JFXButton fx:id="btnSave" onAction="#btnSaveOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #008cff;" text="Save" />
+                                             </children>
+                                          </HBox>
                                                       <HBox alignment="CENTER" prefHeight="53.0" prefWidth="187.0">
                                                           <children>
                                                               <JFXButton fx:id="btnDelete" onAction="#btnDeleteOnAction" prefHeight="41.0" prefWidth="116.0" style="-fx-background-color: #e63946;" text="Delete" />
@@ -125,13 +130,13 @@
                             <children>
                                 <HBox VBox.vgrow="ALWAYS">
                                     <children>
-                                        <TableView fx:id="tblReservation" prefHeight="800.0" prefWidth="1645.0" HBox.hgrow="ALWAYS">
+                                        <TableView fx:id="tblReservation" onMouseClicked="#tblReservationOnAction" prefHeight="800.0" prefWidth="1645.0" HBox.hgrow="ALWAYS">
                                             <columns>
-                                                <TableColumn prefWidth="128.00000762939453" text="Reserve ID" />
-                                                <TableColumn prefWidth="745.9999923706055" text="Student" />
-                                                <TableColumn prefWidth="322.6666564941406" text="Room" />
-                                                <TableColumn prefWidth="333.3333740234375" text="Date" />
-                                                <TableColumn prefWidth="163.6666259765625" text="Status" />
+                                                <TableColumn fx:id="colId" prefWidth="128.00000762939453" text="Reserve ID" />
+                                                <TableColumn fx:id="colStd" prefWidth="745.9999923706055" text="Student" />
+                                                <TableColumn fx:id="colRoom" prefWidth="322.6666564941406" text="Room" />
+                                                <TableColumn fx:id="colDate" prefWidth="333.3333740234375" text="Date" />
+                                                <TableColumn fx:id="colStatus" prefWidth="163.6666259765625" text="Status" />
                                             </columns>
                                         </TableView>
                                     </children>

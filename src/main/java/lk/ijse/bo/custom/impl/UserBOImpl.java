@@ -17,19 +17,18 @@ public class UserBOImpl implements UserBO {
         List<UserDTO>userList= new ArrayList<>();
         List<User>users=userDAO.getAll();
         for (User user:users){
-            userList.add(new UserDTO(user.getUserName(),user.getPasswordl()));
+            userList.add(new UserDTO(user.getUserName(),user.getPassword()));
         }
         return userList;
     }
-
     @Override
     public boolean addUser(UserDTO user) throws Exception {
-        return userDAO.add(new User(user.getUserName(), user.getPasswordl()));
+        return userDAO.add(new User(user.getUserName(), user.getPassword()));
     }
 
     @Override
     public boolean updateUser(UserDTO user) throws Exception {
-        return userDAO.update(new User(user.getUserName(), user.getPasswordl()));
+        return userDAO.update(new User(user.getUserName(), user.getPassword()));
     }
 
     @Override
@@ -38,7 +37,18 @@ public class UserBOImpl implements UserBO {
     }
 
     @Override
-    public boolean searchUser(UserDTO user) throws Exception {
-        return userDAO.exist(new User(user.getUserName(), user.getPasswordl()));
+    public boolean exist(String userName) throws Exception {
+        return userDAO.exist(userName);
+    }
+
+    @Override
+    public UserDTO search(String userName) throws Exception {
+        User user = userDAO.search(userName);
+        return new UserDTO(user.getUserName(),user.getPassword());
+    }
+
+    @Override
+    public boolean checkUser(String userName, String password) throws Exception {
+        return userDAO.checkUser(userName,password);
     }
 }
